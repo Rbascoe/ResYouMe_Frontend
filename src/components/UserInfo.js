@@ -5,6 +5,7 @@ import Dialog from '@material-ui/core/Dialog';
 // import AppBar from '@material-ui/core/AppBar';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import PasswordField from 'material-ui-password-field';
 import Button from '@material-ui/core/Button';
 
 
@@ -49,11 +50,11 @@ export class UserInfo extends Component {
     return (
     //   <MuiThemeProvider>
         <>
-          {/* <Dialog 
+          <Dialog 
             open
             fullWidth
             maxWidth='sm'
-          > */}
+          >
             <form onSubmit={(e) =>  this.signUp(e) }>
             <TextField
               placeholder="Enter Your First Name"
@@ -81,8 +82,9 @@ export class UserInfo extends Component {
               margin="normal"
               fullWidth
             />
-             <br />
-            <TextField
+            <br />
+            <br />
+            <PasswordField
               placeholder="Enter Your Password"
               label="Password"
               onChange={handleChange('password')}
@@ -117,7 +119,7 @@ export class UserInfo extends Component {
               SignUp
             </Button>
             </form>
-          {/* </Dialog> */}
+          </Dialog>
         </>
        /* </MuiThemeProvider> */
     );
