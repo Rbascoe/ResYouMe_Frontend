@@ -14,25 +14,47 @@ export class UserInfo extends Component {
   // submit = e => {
   //   e.preventDefault();
   //   this.props.history.push("/profile")
-  // };
+  //
+  signUp = (e) => {
+    e.preventDefault()
 
-  // routeChange=()=> {
-  //   let path = '/profile'
-  //   let history = this.props.history;
-  //   history.push(path);
-  // }
+    const {values} = this.props;
+
+    fetch("http://localhost:3000/api/v1/users", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+        //    user:{
+            first_name: values.first_name,
+            last_name: values.last_name,
+            email: values.email,
+            password: values.password,
+            address: values.address,
+            phone_number: values.phone_number,
+            
+        //    }
+        })
+    })
+    .then(res => res.json())
+    .then(console.log)
+}
+
+
+  
 
   render() {
     const { values, handleChange } = this.props;
     return (
     //   <MuiThemeProvider>
         <>
-          <Dialog 
+          {/* <Dialog 
             open
             fullWidth
             maxWidth='sm'
-          >
-        
+          > */}
+            <form onSubmit={(e) =>  this.signUp(e) }>
             <TextField
               placeholder="Enter Your First Name"
               label="First Name"
@@ -87,19 +109,15 @@ export class UserInfo extends Component {
               fullWidth
             />
             <br />
-            {/* <Button
-              color="primary"
-              variant="contained"
-              onClick={this.routeChange}
-            >Submit</Button> */}
-            <Button
-            component={ Link } 
-            to="/profile"
+            <Button type="submit"
+            // component={ Link } 
+            // to="/profile"
             variant="contained"
             color="primary">
               SignUp
             </Button>
-          </Dialog>
+            </form>
+          {/* </Dialog> */}
         </>
        /* </MuiThemeProvider> */
     );
