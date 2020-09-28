@@ -15,7 +15,7 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
-    <Route path="/" render={(routerProps) => <MainContainer {...routerProps} />}/>
+        <Route path="/" render={(routerProps) => <MainContainer {...routerProps} />}/>
         <Header />
         <Switch>
           <Route path="/signup" render={(routerProps) => <UserForm {...routerProps} />}/>

@@ -7,6 +7,7 @@ export default class Profile extends Component {
         return (
             <div>
                 {/* Some user info */}
+                Hello
                 <Resume />
             </div>
         )
