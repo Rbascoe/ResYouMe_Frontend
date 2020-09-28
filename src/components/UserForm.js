@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import UserInfo from './UserInfo';
-// import FormPersonalDetails from './FormPersonalDetails';
-// import Confirm from './Confirm';
-// import Success from './Success';
+
 
 export class UserForm extends Component {
 
