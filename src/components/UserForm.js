@@ -5,6 +5,7 @@ import UserInfo from './UserInfo';
 // import Success from './Success';
 
 export class UserForm extends Component {
+
   state = {
     first_name: '',
     last_name: '',
@@ -21,7 +22,6 @@ export class UserForm extends Component {
   };
 
   render() {
-    const { step } = this.state;
     const { first_name, last_name, address, phone_number,
     email, password} = this.state;
     const values = { first_name, last_name, address, phone_number,
@@ -29,7 +29,6 @@ export class UserForm extends Component {
 
         return (
           <UserInfo
-            nextStep={this.nextStep}
             handleChange={this.handleChange}
             values={values}
           />

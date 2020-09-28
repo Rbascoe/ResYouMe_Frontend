@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
+import UserForm from '../components/UserForm';
 
 export default class MainContainer extends Component {
 
-    handleClick = () => {
-        this.props.history.push("/users/new")
-    }
+    // handleClick = (e) => {
+    //     this.props.history.push("/signup")
+    //     console.log("clicked")
+    // }
 
     render() {
         return (
             <div>
-                <Button onClick={() => this.handleClick}>SignUp</Button>
+                <Button onClick={(e) => this.props.history.push("/signup")}>SignUp</Button>
                 <Button>LogIn</Button>
 
             </div>

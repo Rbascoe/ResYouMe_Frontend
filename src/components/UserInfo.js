@@ -1,15 +1,26 @@
 import React, { Component } from 'react';
+// import { useHistory } from 'react-router-dom'
+import { Link }  from 'react-router-dom'
 import Dialog from '@material-ui/core/Dialog';
 // import AppBar from '@material-ui/core/AppBar';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+
+
 export class UserInfo extends Component {
-//   continue = e => {
-//     e.preventDefault();
-//     this.props.nextStep();
-//   };
+ 
+  // submit = e => {
+  //   e.preventDefault();
+  //   this.props.history.push("/profile")
+  // };
+
+  // routeChange=()=> {
+  //   let path = '/profile'
+  //   let history = this.props.history;
+  //   history.push(path);
+  // }
 
   render() {
     const { values, handleChange } = this.props;
@@ -76,11 +87,18 @@ export class UserInfo extends Component {
               fullWidth
             />
             <br />
-            <Button
+            {/* <Button
               color="primary"
               variant="contained"
-            //   onClick={this.continue}
-            >Submit</Button>
+              onClick={this.routeChange}
+            >Submit</Button> */}
+            <Button
+            component={ Link } 
+            to="/profile"
+            variant="contained"
+            color="primary">
+              SignUp
+            </Button>
           </Dialog>
         </>
        /* </MuiThemeProvider> */
