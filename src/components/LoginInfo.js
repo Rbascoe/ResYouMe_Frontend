@@ -9,7 +9,7 @@ import { Route, withRouter } from 'react-router-dom';
 
 
 
-class LoginForm extends Component {
+class LoginInfo extends Component {
 
   handleChange = (e) => {
     this.setState({
@@ -79,7 +79,7 @@ class LoginForm extends Component {
             <Button type="submit"
             variant="contained"
             color="primary">
-              SignUp
+              LogIn
             </Button>
             </form>
         </Dialog>
@@ -89,4 +89,4 @@ class LoginForm extends Component {
   }
 }
 
-export default withRouter(LoginForm);
+export default withRouter(LoginInfo);

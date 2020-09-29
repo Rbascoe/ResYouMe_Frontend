@@ -13,7 +13,7 @@ export default class MainContainer extends Component {
         return (
             <div>
                 <Button onClick={(e) => this.props.history.push("/signup")}>SignUp</Button>
-                <Button>LogIn</Button>
+                <Button onClick={(e) => this.props.history.push("/login")}>LogIn</Button>
 
             </div>
         )
