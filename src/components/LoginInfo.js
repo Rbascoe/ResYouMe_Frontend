@@ -18,11 +18,13 @@ class LoginInfo extends Component {
   }
 
   handleSubmit = () => {
-    this.props.history.push("/resume_builder")
+    this.props.history.push("/profile")
   }
 
   login = (e) => {
     e.preventDefault()
+
+    const {values} = this.props;
 
     fetch("http://localhost:3000/api/v1/login", {
         method: "POST",
@@ -31,8 +33,8 @@ class LoginInfo extends Component {
         },
         body: JSON.stringify({
         
-            email: this.state.email,
-            password: this.state.password
+            email: values.email,
+            password: values.password,
             
         })
       })

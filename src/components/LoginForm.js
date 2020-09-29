@@ -16,7 +16,7 @@ export class LoginForm extends Component {
 
   render() {
     const { email, password} = this.state;
-    const values = { email, password};
+    const values = { email, password };
 
         return (
           <LoginInfo
