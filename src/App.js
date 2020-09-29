@@ -9,6 +9,8 @@ import Profile from './components/Profile';
 import Resume from './components/Resume';
 import ResumeForm from './components/ResumeForm';
 import ResumeInfo from './components/ResumeInfo';
+import LoginForm from './components/LoginForm';
+import LoginInfo from './components/LoginInfo'
 
 
 
@@ -25,6 +27,9 @@ function App() {
 
           <Route path="/resume_builder" render={(routerProps) => <ResumeForm {...routerProps} />}/>
           <Route path="/resume_builder" render={(routerProps) => <ResumeInfo {...routerProps} />}/>
+
+          <Route path="/login" render={(routerProps) => <LoginForm {...routerProps} />}/>
+          <Route path="/login" render={(routerProps) => <LoginInfo {...routerProps} />}/>
         </Switch>
         <Route path="/profile" render={(routerProps) => <Profile {...routerProps} />}/>
       </div>
