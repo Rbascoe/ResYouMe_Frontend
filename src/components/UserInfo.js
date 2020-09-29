@@ -45,7 +45,7 @@ export class UserInfo extends Component {
   }
 
   handleSubmit = () => {
-    console.log(this.props)
+    // console.log(this.props)
     this.props.history.push("/resume_builder")
   }
 
