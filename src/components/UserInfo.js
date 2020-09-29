@@ -7,6 +7,8 @@ import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import PasswordField from 'material-ui-password-field';
 import Button from '@material-ui/core/Button';
+import { Route, withRouter } from 'react-router-dom';
+
 
 
 
@@ -40,10 +42,12 @@ export class UserInfo extends Component {
     })
     .then(res => res.json())
     .then(console.log)
-}
+  }
 
-
-  
+  handleSubmit = () => {
+    console.log(this.props)
+    this.props.history.push("/resume_builder")
+  }
 
   render() {
     const { values, handleChange } = this.props;
@@ -55,7 +59,11 @@ export class UserInfo extends Component {
             fullWidth
             maxWidth='sm'
           >
-            <form onSubmit={(e) =>  this.signUp(e) }>
+            <form onSubmit={(e) => {
+              this.signUp(e) 
+              this.handleSubmit()
+            }
+            }>
             <TextField
               placeholder="Enter Your First Name"
               label="First Name"
@@ -126,4 +134,4 @@ export class UserInfo extends Component {
   }
 }
 
-export default UserInfo;
+export default withRouter(UserInfo);
