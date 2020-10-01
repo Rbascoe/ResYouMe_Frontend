@@ -15,12 +15,24 @@ import LoginInfo from './components/LoginInfo'
 
 
 
-function App() {
+export class App extends React.Component {
+
+  state = { user: null }
+
+  setUser = user => {
+    this.setState({user: user})
+  }
+
+render(){
   return (
-    <BrowserRouter>
     <div className="App">
-        <Route path="/" render={(routerProps) => <MainContainer {...routerProps} />}/>
-        <Header />
+    <BrowserRouter >
+  
+    <Header className="header" /> 
+      {/* {localStorage.token ? */}
+        <Route path="/" render={(routerProps) => <MainContainer {...routerProps} user={this.state.user} setUser={this.setUser} />}/> 
+        <Route path="/profile" render={(routerProps) => <Profile {...routerProps} />}/>
+        {/* } */}
         <Switch>
           <Route path="/signup" render={(routerProps) => <UserForm {...routerProps} />}/>
           <Route path="/signup" render={(routerProps) => <UserInfo {...routerProps} />}/>
@@ -31,10 +43,11 @@ function App() {
           <Route path="/login" render={(routerProps) => <LoginForm {...routerProps} />}/>
           <Route path="/login" render={(routerProps) => <LoginInfo {...routerProps} />}/>
         </Switch>
-        <Route path="/profile" render={(routerProps) => <Profile {...routerProps} />}/>
-      </div>
+      
    </BrowserRouter>
+   </div> 
   );
+  }
 }
 
 export default App;
