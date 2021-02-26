@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Button from '@material-ui/core/Button';
-import UserForm from '../components/UserForm';
 
 
 
@@ -20,11 +19,11 @@ function MainContainer(props) {
 
         return (
             <div>
-                <Button onClick={(e) => props.history.push("/signup")}>SignUp</Button>
-                {/* {!localStorage.token ? */}
-                <Button onClick={(e) => props.history.push("/login")}>LogIn</Button> 
+                <Button onClick={() => props.history.push("/signup")}>SignUp</Button>
+                {!localStorage.token ?
+                <Button onClick={() => props.history.push("/login")}>LogIn</Button> :
                 <Button onClick={handleLogout}>LogOut</Button>
-                {/* } */}
+                }
             </div>
         )
     

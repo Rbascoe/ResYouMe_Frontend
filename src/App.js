@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import UserForm from './components/UserForm';
 import UserInfo from './components/UserInfo';
 import Profile from './components/Profile';
-import Resume from './components/Resume';
+// import Resume from './components/Resume';
 import ResumeForm from './components/ResumeForm';
 import ResumeInfo from './components/ResumeInfo';
 import LoginForm from './components/LoginForm';
@@ -30,7 +30,7 @@ render(){
   
     <Header className="header" /> 
       {/* {localStorage.token ? */}
-        <Route path="/" render={(routerProps) => <MainContainer {...routerProps} user={this.state.user} setUser={this.setUser} />}/> 
+        <Route path="/" render={(routerProps) => <MainContainer className="Nav" {...routerProps} user={this.state.user} setUser={this.setUser} />}/> 
         <Route path="/profile" render={(routerProps) => <Profile {...routerProps} />}/>
         {/* } */}
         <Switch>

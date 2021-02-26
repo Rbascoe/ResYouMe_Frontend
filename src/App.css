@@ -1,15 +1,21 @@
 
 .App {
   text-align: center;
-  background-color: rgb(230, 87, 87, 0.9);
+  background-color: rgb(255, 255, 255);
+}
+
+.Nav {
+ background-color: red;
 }
 
 .header {
-  background-color:  rgb(255, 165, 0, 0.5)
+  margin-top: -25px;
+  margin-bottom: 0px;
+  background-color:  rgba(130, 220, 255, 0.795)
 }
 
 button.MuiButtonBase-root {
-  background-color: rgba(252, 252, 21, 0.74)
+  background-color: rgba(130, 220, 255, 0.795)
 }
 
 /* .App-header {
