@@ -18,12 +18,23 @@ function MainContainer(props) {
     }
 
         return (
-            <div>
+            <div style={{opacity: 1.0}}>
                 <Button onClick={() => props.history.push("/signup")}>SignUp</Button>
                 {!localStorage.token ?
                 <Button onClick={() => props.history.push("/login")}>LogIn</Button> :
                 <Button onClick={handleLogout}>LogOut</Button>
                 }
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <h1 style={{
+                    fontSize: '60px',
+                    color: 'gold', 
+                    outline: '5px', 
+                    outlineColor: 'black' }}>Build Your Resume Today!</h1>
             </div>
         )
     
